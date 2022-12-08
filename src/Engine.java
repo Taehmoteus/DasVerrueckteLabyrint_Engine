@@ -89,10 +89,7 @@ public class Engine {
    * @author tstoehr
    */
   public void run() throws IOException {
-    System.out.println("1");
-    //checkForServer(serverIP, serverPort, timeIntervalCheckServerSocket);
-    engineSocket = new Socket(serverIP, serverPort);
-    System.out.println("2");
+    checkForServer(serverIP, serverPort, timeIntervalCheckServerSocket);
     serverOutMessage = new BufferedWriter(new OutputStreamWriter(engineSocket.getOutputStream()));
     serverInMessage = new BufferedReader(new InputStreamReader(engineSocket.getInputStream()));
     //start new Thread for reading
